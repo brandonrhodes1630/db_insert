@@ -4,7 +4,7 @@ on:
   schedule:
     # This runs the workflow daily at 00:00 UTC (midnight).
     # Cron syntax: "minute hour day_of_month month day_of_week"
-    - cron: '30 14 * * *'
+    - cron: '15 14 * * *'
   workflow_dispatch:
     # This allows you to manually trigger the workflow from the GitHub Actions tab.
     # It's very useful for testing and immediate runs.
@@ -36,4 +36,8 @@ jobs:
         TABLE_NAME: ${{ secrets.TABLE_NAME }} # Only include if you created this secret
       run: |
         # Execute your Python script
+<<<<<<< HEAD
         python testsd_ingestion.py
+=======
+        python test_ingestion.py
+>>>>>>> 347cc09399c27e34a5fad51d4a79e8ff2baa8e1d
