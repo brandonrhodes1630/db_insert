@@ -1,0 +1,38 @@
+# Environment variables
+auth.env
+.env
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# IDE-specific files
+.idea/             # PyCharm
+.vscode/           # VS Code
+*.sublime-project  # Sublime Text
+*.sublime-workspace
+
+# Operating System files
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# Test/coverage files
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Distribution / build artifacts
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log

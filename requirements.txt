@@ -1,0 +1,12 @@
+requests
+time
+psycopg2
+pandas
+psycopg2.extras
+os
+dotenv
+warnings
+io
+json
+csv
+random
