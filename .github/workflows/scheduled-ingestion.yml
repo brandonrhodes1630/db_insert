@@ -36,4 +36,4 @@ jobs:
         TABLE_NAME: ${{ secrets.TABLE_NAME }} # Only include if you created this secret
       run: |
         # Execute your Python script
-        python data_ingest.py # Make sure this matches your script's filename
+        python test_ingestion.py
