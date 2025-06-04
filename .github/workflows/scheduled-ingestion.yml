@@ -1,0 +1,39 @@
+name: Scheduled Data Ingestion from Moveworks API
+
+on:
+  schedule:
+    # This runs the workflow daily at 00:00 UTC (midnight).
+    # Cron syntax: "minute hour day_of_month month day_of_week"
+    - cron: '30 14 * * *'
+  workflow_dispatch:
+    # This allows you to manually trigger the workflow from the GitHub Actions tab.
+    # It's very useful for testing and immediate runs.
+
+jobs:
+  ingest_data_job:
+    runs-on: ubuntu-latest # Specifies the operating system for the job
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4 # Action to get your code into the runner environment
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v5 # Action to set up Python
+      with:
+        python-version: '3.9' # Specify your desired Python version (e.g., '3.8', '3.10', '3.11')
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt # Installs libraries from your requirements.txt
+
+    - name: Execute data ingestion script
+      env:
+        # Pass GitHub Secrets as environment variables to your script
+        azure_user: ${{ secrets.azure_user }}
+        azure_pw: ${{ secrets.azure_pw }}
+        api_token: ${{ secrets.api_token }}
+        TABLE_NAME: ${{ secrets.TABLE_NAME }} # Only include if you created this secret
+      run: |
+        # Execute your Python script
+        python data_ingest.py # Make sure this matches your script's filename
