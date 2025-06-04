@@ -28,7 +28,7 @@ DATABASE_CONFIG = {
 BASE_API_URL = "https://api.moveworks.ai/export/v1beta2/records/conversations"
 TABLE_NAME = os.getenv('TABLE_NAME', 'sigi.conversations')
 HEADERS = {
-    'Authorization': os.getenv('api_token'),
+    'Authorization': f"Bearer {os.getenv('api_token')}",
     'Content-Type': 'application/json'
 }
 
