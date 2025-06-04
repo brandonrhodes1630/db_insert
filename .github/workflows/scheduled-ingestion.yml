@@ -4,7 +4,7 @@ on:
   schedule:
     # This runs the workflow daily at 00:00 UTC (midnight).
     # Cron syntax: "minute hour day_of_month month day_of_week"
-    - cron: '30 14 * * *'
+    - cron: '15 14 * * *'
   workflow_dispatch:
     # This allows you to manually trigger the workflow from the GitHub Actions tab.
     # It's very useful for testing and immediate runs.
