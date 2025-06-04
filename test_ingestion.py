@@ -13,7 +13,7 @@ import csv # Import csv module for quoting control
 import random
 
 # Load environment variables
-load_dotenv('auth.env')
+#load_dotenv('auth.env')
 
 # Database configuration
 DATABASE_CONFIG = {
