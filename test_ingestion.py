@@ -17,16 +17,16 @@ import random
 
 # Database configuration
 DATABASE_CONFIG = {
-    'host': 'prd-usc-itworks-postgresql-65ba.postgres.database.azure.com',
+    'host': 'https://prd-usc-itworks-postgresql-65ba.postgres.database.azure.com',
     'database': 'sd_reports',
-    'user': os.getenv('AZURE_USER'),
-    'password': os.getenv('AZURE_PW'),
+    'user': os.environ['AZURE_USER'],
+    'password': os.environ['AZURE_PW'],
     'port': '5432'
 }
 
 # API configuration
 BASE_API_URL = "https://api.moveworks.ai/export/v1beta2/records/conversations"
-TABLE_NAME = os.getenv('TABLE_NAME', 'sigi.conversations')
+TABLE_NAME = os.envrion['TABLE_NAME', 'sigi.conversations']
 HEADERS = {
     'Authorization': 'd30820d2-716a-499d-a226-9430614a462d',
     'Content-Type': 'application/json'
