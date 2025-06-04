@@ -1,12 +1,4 @@
 requests
-time
-psycopg2
+psycopg2-binary
 pandas
-psycopg2.extras
-os
-dotenv
-warnings
-io
-json
-csv
-random
+python-dotenv
