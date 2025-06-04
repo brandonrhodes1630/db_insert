@@ -17,11 +17,11 @@ import random
 
 # Database configuration
 DATABASE_CONFIG = {
-    'host': 'prd-usc-itworks-postgresql-65ba.postgres.database.azure.com',
-    'database': 'sd_reports',
+    'host': os.getenv('AZURE_HOST'),
+    'database': os.getenv('AZURE_DB'),
     'user': os.getenv('AZURE_USER'),
     'password': os.getenv('AZURE_PW'),
-    'port': '5432'
+    'port': os.getenv('AZURE_PORT')
 }
 
 # API configuration
