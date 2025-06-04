@@ -30,9 +30,9 @@ jobs:
     - name: Execute data ingestion script
       env:
         # Pass GitHub Secrets as environment variables to your script
-        azure_user: ${{ secrets.azure_user }}
-        azure_pw: ${{ secrets.azure_pw }}
-        api_token: ${{ secrets.api_token }}
+        AZURE_USER: ${{ secrets.AZURE_USER }}
+        AZURE_PW: ${{ secrets.AZURE_PW }}
+        API_TOKEN: ${{ secrets.API_TOKEN }}
         TABLE_NAME: ${{ secrets.TABLE_NAME }} # Only include if you created this secret
       run: |
         # Execute your Python script

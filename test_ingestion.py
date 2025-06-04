@@ -19,8 +19,8 @@ load_dotenv('auth.env')
 DATABASE_CONFIG = {
     'host': 'prd-usc-itworks-postgresql-65ba.postgres.database.azure.com',
     'database': 'sd_reports',
-    'user': os.getenv('azure_user'),
-    'password': os.getenv('azure_pw'),
+    'user': os.getenv('AZURE_USER'),
+    'password': os.getenv('AZURE_PW'),
     'port': '5432'
 }
 
@@ -28,7 +28,7 @@ DATABASE_CONFIG = {
 BASE_API_URL = "https://api.moveworks.ai/export/v1beta2/records/conversations"
 TABLE_NAME = os.getenv('TABLE_NAME', 'sigi.conversations')
 HEADERS = {
-    'Authorization': f"Bearer {os.getenv('api_token')}",
+    'Authorization': os.getenv('API_TOKEN'),
     'Content-Type': 'application/json'
 }
 
